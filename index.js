@@ -43,6 +43,10 @@ client.on("guildCreate", guild => {
 })
 client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
+    console.log(client.guilds.cache.map((guild) => guild.name).join(' - \n'))
+    client.guilds.cache.map((guild) => guild.id).forEach((guild)=>{
+        register(guild)
+    })
 });
 
 
